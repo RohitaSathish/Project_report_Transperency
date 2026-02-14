@@ -92,9 +92,14 @@ function ProjectDetails({ user }) {
           )}
 
           {user.role === 'student' && (
-            <button onClick={() => setShowEvaluation(!showEvaluation)} className="btn btn-success">
-              {showEvaluation ? 'Cancel' : 'Submit Peer Evaluation'}
-            </button>
+            <>
+              <button onClick={() => navigate(`/peer-evaluation/${id}`)} className="btn btn-success">
+                Peer Evaluation
+              </button>
+              <button onClick={() => navigate(`/student-report/${id}`)} className="btn btn-primary">
+                My Contribution Report
+              </button>
+            </>
           )}
 
           {showTaskForm && (
