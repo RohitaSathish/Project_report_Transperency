@@ -47,10 +47,23 @@ Frontend will run on http://localhost:3000
 - Mark adjustment
 
 ### Student Dashboard
-- View assigned tasks
-- Update task status
-- Submit progress
-- Peer evaluation
+- Assigned projects overview
+- Task status overview with completion tracking
+- Upcoming deadlines
+- Contribution percentage display
+- View project details
+- Submit and update tasks
+- Peer evaluation system
+- Personal contribution reports
+
+### Student Features
+- **Task Management**: Update task status (Pending/In Progress/Completed)
+- **File Upload**: Upload files for task submissions
+- **Comments**: Add comments on tasks
+- **Peer Evaluation**: Rate teammates (1-5 stars) with feedback
+- **Anonymous Option**: Submit evaluations anonymously
+- **Contribution Report**: View personal analytics with graphs
+- **Performance Tracking**: Task completion %, peer ratings, final grades
 
 ## Note
 
