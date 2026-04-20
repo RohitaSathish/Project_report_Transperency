@@ -71,54 +71,9 @@ function FacultyDashboard({ user }) {
 
       <div className="card">
         <h2>Recent Activity</h2>
-        <table>
-          <thead>
-            <tr>
-              <th>Project</th>
-              <th>Student</th>
-              <th>Activity</th>
-              <th>Date</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Web Development Project</td>
-              <td>Rahul</td>
-              <td>Submitted Task: Frontend Design</td>
-              <td>Feb 13, 2026</td>
-              <td><span style={{ padding: '5px 10px', background: '#a8956b', color: 'white', borderRadius: '4px', fontSize: '12px' }}>Completed</span></td>
-            </tr>
-            <tr>
-              <td>Mobile App Development</td>
-              <td>Priya</td>
-              <td>Updated Task: API Integration</td>
-              <td>Feb 12, 2026</td>
-              <td><span style={{ padding: '5px 10px', background: '#c9a882', color: 'white', borderRadius: '4px', fontSize: '12px' }}>In Progress</span></td>
-            </tr>
-            <tr>
-              <td>Database Design Project</td>
-              <td>Arjun</td>
-              <td>Peer Evaluation Submitted</td>
-              <td>Feb 11, 2026</td>
-              <td><span style={{ padding: '5px 10px', background: '#a8956b', color: 'white', borderRadius: '4px', fontSize: '12px' }}>Completed</span></td>
-            </tr>
-            <tr>
-              <td>Web Development Project</td>
-              <td>Ananya</td>
-              <td>Started Task: Backend Development</td>
-              <td>Feb 10, 2026</td>
-              <td><span style={{ padding: '5px 10px', background: '#c9a882', color: 'white', borderRadius: '4px', fontSize: '12px' }}>In Progress</span></td>
-            </tr>
-            <tr>
-              <td>Mobile App Development</td>
-              <td>Vikram</td>
-              <td>Submitted Task: UI/UX Design</td>
-              <td>Feb 09, 2026</td>
-              <td><span style={{ padding: '5px 10px', background: '#a8956b', color: 'white', borderRadius: '4px', fontSize: '12px' }}>Completed</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <div style={{ textAlign: 'center', padding: '40px', color: '#8b7355' }}>
+          <p>No activity yet. Activity will appear here as projects and tasks are created.</p>
+        </div>
       </div>
 
       <div className="card">
@@ -126,23 +81,23 @@ function FacultyDashboard({ user }) {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '20px' }}>
           <div style={{ padding: '20px', background: '#f5e6d3', borderRadius: '8px', border: '1px solid #e8d5c4' }}>
             <h3 style={{ color: '#c9a882', marginBottom: '10px' }}>Active Students</h3>
-            <p style={{ fontSize: '32px', fontWeight: 'bold', color: '#6b5744' }}>24</p>
-            <p style={{ color: '#6b5744', fontSize: '14px' }}>Across 5 projects</p>
+            <p style={{ fontSize: '32px', fontWeight: 'bold', color: '#6b5744' }}>0</p>
+            <p style={{ color: '#6b5744', fontSize: '14px' }}>Across all projects</p>
           </div>
           <div style={{ padding: '20px', background: '#f5e6d3', borderRadius: '8px', border: '1px solid #e8d5c4' }}>
             <h3 style={{ color: '#a8956b', marginBottom: '10px' }}>Tasks This Week</h3>
-            <p style={{ fontSize: '32px', fontWeight: 'bold', color: '#6b5744' }}>18</p>
-            <p style={{ color: '#6b5744', fontSize: '14px' }}>12 completed, 6 in progress</p>
+            <p style={{ fontSize: '32px', fontWeight: 'bold', color: '#6b5744' }}>0</p>
+            <p style={{ color: '#6b5744', fontSize: '14px' }}>No tasks created yet</p>
           </div>
           <div style={{ padding: '20px', background: '#f5e6d3', borderRadius: '8px', border: '1px solid #e8d5c4' }}>
             <h3 style={{ color: '#8b7355', marginBottom: '10px' }}>Peer Evaluations</h3>
-            <p style={{ fontSize: '32px', fontWeight: 'bold', color: '#6b5744' }}>32</p>
-            <p style={{ color: '#6b5744', fontSize: '14px' }}>Submitted this month</p>
+            <p style={{ fontSize: '32px', fontWeight: 'bold', color: '#6b5744' }}>0</p>
+            <p style={{ color: '#6b5744', fontSize: '14px' }}>No evaluations submitted</p>
           </div>
           <div style={{ padding: '20px', background: '#f5e6d3', borderRadius: '8px', border: '1px solid #e8d5c4' }}>
             <h3 style={{ color: '#c4917a', marginBottom: '10px' }}>Avg Completion Rate</h3>
-            <p style={{ fontSize: '32px', fontWeight: 'bold', color: '#6b5744' }}>78%</p>
-            <p style={{ color: '#6b5744', fontSize: '14px' }}>Across all projects</p>
+            <p style={{ fontSize: '32px', fontWeight: 'bold', color: '#6b5744' }}>0%</p>
+            <p style={{ color: '#6b5744', fontSize: '14px' }}>No data available</p>
           </div>
         </div>
       </div>

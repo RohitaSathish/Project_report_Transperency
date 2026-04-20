@@ -68,6 +68,15 @@ body {
   background: #b37f68;
 }
 
+.btn-secondary {
+  background: #8b7355;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #6b5744;
+}
+
 input, select, textarea {
   width: 100%;
   padding: 12px;

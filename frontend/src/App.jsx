@@ -7,6 +7,8 @@ import Dashboard from './pages/Dashboard'
 import ProjectDetails from './pages/ProjectDetails'
 import Analytics from './pages/Analytics'
 import AdminDashboard from './pages/AdminDashboard'
+import AdminStudents from './pages/AdminStudents'
+import AdminFaculty from './pages/AdminFaculty'
 import FacultyDashboard from './pages/FacultyDashboard'
 import FacultyStatus from './pages/FacultyStatus'
 import FacultyActions from './pages/FacultyActions'
@@ -21,6 +23,7 @@ import FacultyTasks from './pages/FacultyTasks'
 import FacultyStudents from './pages/FacultyStudents'
 import FacultyEvaluations from './pages/FacultyEvaluations'
 import FacultyReports from './pages/FacultyReports'
+import DebugStorage from './pages/DebugStorage'
 
 function App() {
   const [user, setUser] = useState(null);
@@ -37,6 +40,8 @@ function App() {
         <Route path="/login" element={<Login setUser={setUser} />} />
         <Route path="/register" element={<Register setUser={setUser} />} />
         <Route path="/admin" element={user?.role === 'admin' ? <AdminDashboard user={user} /> : <Navigate to="/login" />} />
+        <Route path="/admin/students" element={user?.role === 'admin' ? <AdminStudents user={user} /> : <Navigate to="/login" />} />
+        <Route path="/admin/faculty" element={user?.role === 'admin' ? <AdminFaculty user={user} /> : <Navigate to="/login" />} />
         <Route path="/faculty" element={user?.role === 'faculty' ? <FacultyDashboard user={user} /> : <Navigate to="/login" />} />
         <Route path="/faculty-status" element={user?.role === 'faculty' ? <FacultyStatus user={user} /> : <Navigate to="/login" />} />
         <Route path="/faculty-actions" element={user?.role === 'faculty' ? <FacultyActions user={user} /> : <Navigate to="/login" />} />
@@ -53,6 +58,7 @@ function App() {
         <Route path="/student-report/:id" element={user?.role === 'student' ? <StudentReport user={user} /> : <Navigate to="/login" />} />
         <Route path="/analytics/:id" element={user ? <Analytics user={user} /> : <Navigate to="/login" />} />
         <Route path="/evaluation-report/:id" element={user?.role === 'faculty' ? <EvaluationReports user={user} /> : <Navigate to="/login" />} />
+        <Route path="/debug" element={<DebugStorage />} />
       </Routes>
     </BrowserRouter>
   );

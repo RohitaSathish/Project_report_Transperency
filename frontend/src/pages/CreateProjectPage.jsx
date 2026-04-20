@@ -20,12 +20,8 @@ function CreateProjectPage({ user }) {
   }, []);
 
   const loadStudents = async () => {
-    try {
-      const { data } = await getAllUsers();
-      setStudents(data.filter(u => u.role === 'student'));
-    } catch (err) {
-      console.error(err);
-    }
+    const registeredUsers = JSON.parse(localStorage.getItem('registeredUsers') || '[]');
+    setStudents(registeredUsers.filter(u => u.role === 'student'));
   };
 
   const handleSubmit = async (e) => {
@@ -132,20 +128,22 @@ function CreateProjectPage({ user }) {
               <div style={{ marginTop: '10px' }}>
                 <strong>Assigned Students ({team.members.length}):</strong>
                 {team.members.map(memberId => {
-                  const student = students.find(s => s._id === memberId);
+                  const student = students.find(s => s.id === memberId);
                   return student ? (
-                    <div key={memberId} style={{ display: 'inline-block', margin: '5px', padding: '5px 10px', background: '#007bff', color: 'white', borderRadius: '4px' }}>
-                      {student.name}
-                      <button type="button" onClick={() => removeMemberFromTeam(idx, memberId)} style={{ marginLeft: '5px', background: 'transparent', border: 'none', color: 'white', cursor: 'pointer' }}>×</button>
+                    <div key={memberId} style={{ display: 'inline-block', margin: '5px', padding: '8px 12px', background: '#c9a882', color: 'white', borderRadius: '6px', fontSize: '14px' }}>
+                      {student.name} ({student.rollNumber})
+                      <button type="button" onClick={() => removeMemberFromTeam(idx, memberId)} style={{ marginLeft: '8px', background: 'transparent', border: 'none', color: 'white', cursor: 'pointer', fontSize: '16px', fontWeight: 'bold' }}>×</button>
                     </div>
                   ) : null;
                 })}
               </div>
 
-              <select onChange={(e) => { addMemberToTeam(idx, e.target.value); e.target.value = ''; }}>
+              <select onChange={(e) => { addMemberToTeam(idx, e.target.value); e.target.value = ''; }} style={{ width: '100%', marginTop: '10px' }}>
                 <option value="">Add Student</option>
                 {students.map(student => (
-                  <option key={student._id} value={student._id}>{student.name}</option>
+                  <option key={student.id} value={student.id}>
+                    {student.name} - {student.rollNumber} - {student.department} - Section {student.section}
+                  </option>
                 ))}
               </select>
             </div>
